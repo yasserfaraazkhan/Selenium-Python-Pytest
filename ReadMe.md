@@ -37,14 +37,14 @@ docker-compose run e2e pytest test_ordering_checkout
 ```
 
 ## Without docker
-# Running different test files in different browsers
+### Running different test files in different browsers
 `pytest --B firefox` # default is chrome
 
-# Running in headless mode
+### Running in headless mode
 `pytest --chromeOption=headless` # we can pass more chrome options
 
-# To run test with reports:
+### To run test with reports:
 `pytest --html=report.html`
 
-# To run test in parallel:
+### To run test in parallel:
 `pytest -n 2` # 2 is number of browsers
