@@ -1,0 +1,28 @@
+Min. Browsers to be covered: Chrome and Firefox on Windows or Mac platform
+Test URL: http://automationpractice.com/
+
+Steps to be carried out
+1. Access the test URL
+2. Click on EVENING DRESSES in submenu that shows up for hover on Dresses menu
+3. Add Printed Dress product to the cart with following details
+Quantity: 2, Size: L, Color: Pink
+4. Click on Continue shopping button on window that shows after adding product to the cart
+5. Click on Women in the menu option
+6. Iterate through the products in the page to find out existence of product with name "Printed
+Chiffon Dress"
+7. If product exists then Hover on the product image and then click on Add to cart button or else
+print an exception, move to Cart and continue from Step 9
+8. Click on Proceed to checkout button in the window that opens up
+9. Reduce the quantity of Printed Dress in the Shopping cart - Summary tab and then proceed to
+next tab
+10. On sign in tab, Create a new account (Fill mandatory details only)
+11. On address tab, proceed to the next tab
+12. On shipping tab, Tick checkbox for Terms of Service and proceed to the next tab
+13. On payment tab, click on Pay by bank wire
+14. Click on I confirm my order button
+15. Capture the Order reference and amount shown on the Order Confirmation screen
+16. Navigate to ORDER HISTORY AND DETAILS under View my customer account (next to Sign out)
+17. Verify the newly created order exists in the Order History table
+18. Verify the Total price for order in table matches with the one captured on Order Confirmation
+screen
+19. Sign out of the application
