@@ -6,7 +6,7 @@ Requirements:
 1. have python installed `brew install python`
 2. Install `pyenv` to use different python versions
 3. Make sure ChromeDriver and GekoDriver aer in executable path
-`brew install chromedriver` and `brew install gecodriver` 
+`brew install chromedriver` and `brew install geckodriver` 
 ```
  pyenv local 3.6.8
  pyenv virtualenvwrapper_lazy
@@ -15,10 +15,10 @@ Requirements:
 ```
 
 Running different test files in different browsers
-pytest --B firefox # default is chrome
+`pytest --B firefox` # default is chrome
 
 Running in headless mode
-pytest --chromeOption=headless # we can pass more chrome options
+`pytest --chromeOption=headless` # we can pass more chrome options
 
 To run test with reports:
 `pytest --html=report.html`
