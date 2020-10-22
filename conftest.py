@@ -30,6 +30,8 @@ def setup(request):
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument(config.chrome_options)
         chrome_options.add_argument('--disable-dev-shm-usage')
+        chrome_options.add_argument("--disable-setuid-sandbox")
+        chrome_options.add_argument('--no-sandbox')
         prefs = {"download.default_directory": os.getcwd()+"/Downloads"}
         chrome_options.add_experimental_option('prefs', prefs)
         driver = webdriver.Chrome(options=chrome_options)

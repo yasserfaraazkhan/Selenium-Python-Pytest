@@ -1,0 +1,10 @@
+version: "3"
+services:
+  e2e:
+    build: .
+    volumes:
+      - .:/oneCom
+    working_dir: /oneCom
+    cap_add:
+      - SYS_ADMIN
+    shm_size: 1024M
