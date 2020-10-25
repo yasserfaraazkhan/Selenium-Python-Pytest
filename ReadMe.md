@@ -59,7 +59,7 @@ There are 2 report options
 `pytest --html=report.html`
 
 #### Pytest Html report for Successfull run
-![Alt text](ReportImages/Screenshot 2020-10-25 at 2.08.56 PM.png?raw=true)
+![Alt text](ReportImages/pytest_html_report.png?raw=true)
 
 ### To run test with allure reports:
 `pytest --alluredir=/tmp/my_allure_results`
@@ -67,9 +67,9 @@ There are 2 report options
 and after the test run
 `allure serve /tmp/my_allure_results`
 
-![Alt text](ReportImages/Screenshot 2020-10-25 at 2.08.44 PM.png?raw=true "Allure overview for Successfull run")
+![Alt text](ReportImages/alure_over_view.png?raw=true "Allure overview for Successfull run")
 
-![Alt text](ReportImages/Screenshot 2020-10-25 at 2.08.31 PM.png?raw=true "Allure detailed test cases result for Successfull run")
+![Alt text](ReportImages/passer_step_detail.png?raw=true "Allure detailed test cases result for Successfull run")
 
-![Alt text](ReportImages/Screenshot 2020-10-25 at 2.05.28 PM.png?raw=true "Allure detailed test cases result for Failed test run")
+![Alt text](ReportImages/failed_step_detail.png?raw=true "Allure detailed test cases result for Failed test run")
 
