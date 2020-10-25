@@ -2,37 +2,48 @@ from PageObjects.locators import HomePage, CreateAccountTab, PaymentTab, Shoppin
 from SeleniumBase.WebActions import Selenium
 from selenium.common.exceptions import NoSuchElementException
 import time
+import allure
 
 
 class HomePageFunctions(Selenium):
+    @allure.step
     def __init__(self, driver):
         self.driver = driver
 
+    @allure.step
     def open(self, url):
         self.get_url(url)
 
+    @allure.step
     def hover_on_dreses_menu(self, option_name):
         self.hover_on_locator(HomePage._dresses_menu_option(option_name))
 
+    @allure.step
     def select_option(self, option_name):
         self.click_element(HomePage._dresses_menu_option(option_name))
 
+    @allure.step
     def set_quantity(self, quantity):
         self.enter_text(HomePage._item_quantity, quantity)
 
+    @allure.step
     def select_size(self, size):
         self.select_by_text(HomePage._item_size, size)
 
+    @allure.step
     def select_color(self, color):
         self.click_element(HomePage._item_color(color))
 
+    @allure.step
     def click_add_to_cart(self):
         self.click_element(HomePage._add_to_cart)
 
+    @allure.step
     def click_continue_to_shopping(self):
         self.scroll_down()
         self.click_element(HomePage._continue_to_shopping)
 
+    @allure.step
     def search_dress(self, search_dress):
         elements = self.find_elements(HomePage._product_name)
         try:
@@ -53,6 +64,7 @@ class HomePageFunctions(Selenium):
             print('No Such Product')
             pass
 
+    @allure.step
     def proceed_to_checkout(self):
         try:
             self.scrollToElement(ShoppingCartPage._proceed_to_checkout)
@@ -61,12 +73,14 @@ class HomePageFunctions(Selenium):
             self.dismiss_browser_alert()
             pass
 
+    @allure.step
     def proceed_to_create_account(self, email_to_enter):
         self.explicitly_wait_for_time(5)
         self.enter_text(
             CreateAccountTab._create_account_email_field, email_to_enter)
         self.click_element(CreateAccountTab._create_account_button)
 
+    @allure.step
     def fill_mandatory_fields(self, name, password, phone_number, zip_code, state):
         # for sake of testing using same data in places,
         # in real time need to be precise about test data
@@ -79,36 +93,48 @@ class HomePageFunctions(Selenium):
         self.wait_for_is_displayed(CreateAccountTab._create_account_state)
         self.select_by_text(CreateAccountTab._create_account_state, state)
         self.enter_text(CreateAccountTab._create_account_zipcode, zip_code)
-        self.enter_text(CreateAccountTab._create_account_mobile, zip_code+zip_code)
+        self.enter_text(CreateAccountTab._create_account_mobile,
+                        zip_code+zip_code)
         self.enter_text(CreateAccountTab._create_account_password, password)
 
         self.click_element(CreateAccountTab._create_account_register_button)
-        self.click_element(CreateAccountTab._proceed_to_checkout_from_adress_tab)
+        self.click_element(
+            CreateAccountTab._proceed_to_checkout_from_adress_tab)
 
+    @allure.step
     def check_terms_and_contition_box(self):
         self.click_element(CreateAccountTab._terms_and_condition)
-        self.click_element(CreateAccountTab._proceed_to_checkout_from_shipping_tab)
+        self.click_element(
+            CreateAccountTab._proceed_to_checkout_from_shipping_tab)
 
+    @allure.step
     def pay_by_bank_wire(self):
         self.click_element(PaymentTab._bank_wire_method)
         self.click_element(PaymentTab._i_confirm_button)
 
+    @allure.step
     def save_reference_number(self):
         return self.get_text(PaymentTab._reference_text)
 
+    @allure.step
     def navigate_to_order_history(self):
         self.click_element(PageHeader._my_profile_option)
         self.click_element(MyAccountPage._order_and_details)
 
+    @allure.step
     def get_order_price(self):
         return self.get_text(MyAccountPage._order_details_price)
 
+    @allure.step
     def get_order_reference_number(self):
         return self.get_text(MyAccountPage._order_details_reference_number)
 
+    @allure.step
     def sign_out(self):
         self.click_element(PageHeader._sign_out)
 
+    @allure.step
     def decrease_quantity(self, dress_name, quantity_decrease_by):
         for index in range(quantity_decrease_by):
-            self.click_element(ShoppingCartPage._quantity_decrease_icon(dress_name))
+            self.click_element(
+                ShoppingCartPage._quantity_decrease_icon(dress_name))

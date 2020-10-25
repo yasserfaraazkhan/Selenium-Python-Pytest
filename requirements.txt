@@ -3,3 +3,5 @@ pytest
 chromedriver
 pytest-xdist
 pytest-html
+allure-pytest
+allure-python-commons

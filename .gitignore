@@ -4,3 +4,8 @@ venv
 .DS_Store/
 geckodriver.log
 .python-version
+reports
+assets
+build
+dist
+*.egg-info

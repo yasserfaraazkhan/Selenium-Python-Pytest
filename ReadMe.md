@@ -13,6 +13,8 @@ Requirements:
  mkvirtualenv venv
  pip install -r requirements.txt
 ```
+## Optionally you can also run 
+```python setup.py install``` to install requirements at /usr/local/bin
 
 ### Selecting the base url
 
@@ -43,8 +45,27 @@ docker-compose run e2e pytest test_ordering_checkout
 ### Running in headless mode
 `pytest --chromeOption=headless` # we can pass more chrome options
 
-### To run test with reports:
-`pytest --html=report.html`
-
 ### To run test in parallel:
 `pytest -n 2` # 2 is number of browsers
+
+## Reporting
+There are 2 report options 
+```
+- pytest html
+- allure
+```
+
+### To run test with pytest reports:
+`pytest --html=report.html`
+
+### To run test with pytest reports:
+`pytest --alluredir=/tmp/my_allure_results`
+![Alt text](/ReportImages/Screenshot 2020-10-25 at 2.08.56 PM.png "Pytest Html report for Successfull run")
+
+and after the test run
+`allure serve /tmp/my_allure_results`
+
+![Alt text](/ReportImages/Screenshot 2020-10-25 at 2.08.44 PM.png "Allure overview for Successfull run")
+![Alt text](/ReportImages/Screenshot 2020-10-25 at 2.08.31 PM.png "Allure detailed test cases result for Successfull run")
+![Alt text](/ReportImages/Screenshot 2020-10-25 at 2.05.28 PM.png "Allure detailed test cases result for Failed test run")
+
