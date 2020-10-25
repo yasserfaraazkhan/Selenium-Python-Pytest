@@ -21,7 +21,7 @@ Requirements:
 You can set the base url with `--baseUrl` cli argument (if running your app against different ENV):
 
 ```
-py.test tests --base-url https://google.com
+py.test --base-url "https://any_test_env_url_to_override"
 ```
 ## Running the tests with docker
 
@@ -60,12 +60,14 @@ There are 2 report options
 
 ### To run test with pytest reports:
 `pytest --alluredir=/tmp/my_allure_results`
-![Alt text](/ReportImages/Screenshot 2020-10-25 at 2.08.56 PM.png "Pytest Html report for Successfull run")
+
+# Pytest Html report for Successfull run
+![Alt text](/ReportImages/Screenshot 2020-10-25 at 2.08.56 PM.png)
 
 and after the test run
 `allure serve /tmp/my_allure_results`
 
-![Alt text](/ReportImages/Screenshot 2020-10-25 at 2.08.44 PM.png "Allure overview for Successfull run")
-![Alt text](/ReportImages/Screenshot 2020-10-25 at 2.08.31 PM.png "Allure detailed test cases result for Successfull run")
-![Alt text](/ReportImages/Screenshot 2020-10-25 at 2.05.28 PM.png "Allure detailed test cases result for Failed test run")
+![Alt text](ReportImages/Screenshot 2020-10-25 at 2.08.44 PM.png "Allure overview for Successfull run")
+![Alt text](ReportImages/Screenshot 2020-10-25 at 2.08.31 PM.png "Allure detailed test cases result for Successfull run")
+![Alt text](ReportImages/Screenshot 2020-10-25 at 2.05.28 PM.png "Allure detailed test cases result for Failed test run")
 
